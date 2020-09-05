@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 @import url("https://fonts.googleapis.com/css?family=Roboto:300,regular,500,700&display=swap&subset=cyrillic-ext");
 
 .main__column-1,
@@ -56,6 +58,17 @@ h2,
   padding: 8px 30px 8px 20px;
 }
 
+.main__column-1::after {
+  position: relative;
+  color: #cccccc;
+  background-color: #000;
+  opacity: 0.7;
+  width: auto;
+  line-height: 24px;
+  width: 14px;
+  padding: 5px 10px 5px 10px;
+}
+
 li {
   list-style: none;
 }
@@ -79,6 +92,10 @@ body {
   margin: 0;
   font-size: 13px;
   font-family: RobotoRegular, sans-serif;
+}
+
+ul {
+  padding: 0;
 }
 
 .header__section {
@@ -111,6 +128,16 @@ body {
           justify-content: center;
 }
 
+.header__nav li {
+  padding: 18px 12px;
+  color: #999;
+}
+
+.header__nav li:hover {
+  cursor: pointer;
+  color: #111;
+}
+
 .logo__img {
   max-height: 50px;
   padding-left: 40px;
@@ -124,20 +151,6 @@ body {
   transition: 0.7s;
 }
 
-ul {
-  padding: 0;
-}
-
-.header__nav li {
-  padding: 18px 12px;
-  color: #999;
-}
-
-.header__nav li:hover {
-  cursor: pointer;
-  color: #111;
-}
-
 .main__wrap {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -149,6 +162,12 @@ ul {
   padding-top: 54px;
   margin-right: auto;
   margin-left: auto;
+}
+
+.main__column-1::after {
+  content: "→";
+  top: -34px;
+  left: 209px;
 }
 
 .main__item {

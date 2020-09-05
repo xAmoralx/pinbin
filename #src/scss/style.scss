@@ -61,7 +61,17 @@ $fontFamily: "Roboto";
     line-height: 30px;
     width: 70px;
     padding: 8px 30px 8px 20px;
+}
 
+%col-arrow {
+    position: relative;
+    color: #cccccc;
+    background-color: #000;
+    opacity: 0.7;
+    width: auto;
+    line-height: 24px;
+    width: 14px;
+    padding: 5px 10px 5px 10px;
 }
 //шаблоны
 
@@ -96,103 +106,169 @@ body {
     font-family: RobotoRegular, sans-serif;
 }
 
-.header__section {
-    width: 100%;
-    max-height: 50px;
-    background-color: #fff;
-    box-shadow: 0 4px 15px -5px #555;
-}
-
-.header__wrap {
-    display: flex;
-    justify-content: flex-start;
-    max-height: 50px;
-    box-shadow: 0 4px 15px -5px #555;
-}
-
-.header__nav {
-    display: flex;
-    margin: 0;
-    justify-content: center;
-}
-
-.logo__img {
-    max-height: 50px;
-    padding-left: 40px;
-}
-
-.logo__img:hover {
-    cursor: pointer;
-    opacity: 0.8;
-    transition: 0.7s;
-}
-
 ul {
     padding: 0;
 }
 
-.header__nav li {
-    padding: 18px 12px;
-    color: #999;
+//========================================== HEADER
+.header {
+
+    // .header__section
+
+    &__section {
+        width: 100%;
+        max-height: 50px;
+        background-color: #fff;
+        box-shadow: 0 4px 15px -5px #555;
+    }
+
+    // .header__wrap
+
+    &__wrap {
+        display: flex;
+        justify-content: flex-start;
+        max-height: 50px;
+        box-shadow: 0 4px 15px -5px #555;
+    }
+
+    // .header__nav
+
+    &__nav {
+        display: flex;
+        margin: 0;
+        justify-content: center;
+    }
+
+    // .header__nav li
+
+    &__nav li {
+        padding: 18px 12px;
+        color: #999;
+    }
+
+    // .header__nav li:hover
+
+    &__nav li:hover {
+        cursor: pointer;
+        color: #111;
+    }
+}
+.logo {
+
+    // .logo__img
+
+    &__img {
+        max-height: 50px;
+        padding-left: 40px;
+    }
+
+    // .logo__img:hover
+
+    &__img:hover {
+        cursor: pointer;
+        opacity: 0.8;
+        transition: 0.7s;
+    }
 }
 
-.header__nav li:hover {
-    cursor: pointer;
-    color: #111;
+//=========================================== /HEADER
+
+//=========================================== MAIN
+.main {
+
+    // .main__wrap
+
+    &__wrap {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        padding-top: 54px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    // .main__column-1
+
+    &__column-1 {
+        @extend %column;
+    }
+
+    &__column-1::after {
+        content: "→";
+        @extend %col-arrow;
+        top: -34px;
+        left: 209px;
+    }
+
+    // .main__item
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+    }
+
+    // .main__img-1
+
+    &__img-1 {
+        background-image: url("../img/lego-750x562.png");
+        @extend %imgs;
+        height: 225px;
+    }
+
+    // .main__img-1::before
+
+    &__img-1::before {
+        content: "Design";
+        top: 195px;
+        @extend %img-category;
+    }
+
+    // .main__content
+
+    &__content {
+        background-color: #fff;
+    }
+
+    // .main__column-2
+
+    &__column-2 {
+        @extend %column;
+    }
+
+    // .main__column-3
+
+    &__column-3 {
+        @extend %column;
+    }
+
+    // .main__column-4
+
+    &__column-4 {
+        @extend %column;
+    }
 }
 
-.main__wrap {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    padding-top: 54px;
-    margin-right: auto;
-    margin-left: auto;
+.content {
+
+    // .content__date
+
+    &__date {
+        @extend %cont-date;
+        @extend %cont-pad;
+    }
+
+    // .content__text
+
+    &__text {
+        @extend %cont-txt;
+        @extend %cont-pad;
+    }
 }
 
-.main__column-1 {
-    @extend %column;
+.test {
+    font-size: 12px;
+    border: 1px solid #333;
+    
 }
 
-.main__column-2 {
-    @extend %column;
-}
-
-.main__column-3 {
-    @extend %column;
-}
-
-.main__column-4 {
-    @extend %column;
-}
-
-.main__item {
-    display: flex;
-    flex-direction: column;
-}
-
-.main__img-1 {
-    background-image: url("../img/lego-750x562.png");
-    @extend %imgs;
-    height: 225px;
-}
-
-.main__img-1::before {
-    content: "Design";
-    top: 195px;
-    @extend %img-category;
-}
-
-.main__content {
-    background-color: #fff;
-}
-
-.content__date {
-    @extend %cont-date;
-    @extend %cont-pad;
-}
-
-.content__text {
-    @extend %cont-txt;
-    @extend %cont-pad;
-}
+//=============================================== /MAIN
