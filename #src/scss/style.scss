@@ -24,13 +24,15 @@ $fontFamily: "Roboto";
     width: 22%;
     margin-right: 10px;
     margin-top: 15px; 
-    box-shadow: 0 4px 15px -5px #555;   
+    box-shadow: 0 4px 15px -5px #555;  
+    position: relative; 
 }
 
 %imgs {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+    position: relative;
 }
 
 %cont-date {
@@ -52,7 +54,8 @@ $fontFamily: "Roboto";
 }
 
 %img-category {
-    position: relative;
+    position: absolute;
+    bottom: 0;
     color: #cccccc;
     background-color: #000;
     opacity: 0.7;
@@ -64,7 +67,10 @@ $fontFamily: "Roboto";
 }
 
 %col-arrow {
-    position: relative;
+    content: "→";
+    position: absolute;
+    bottom: 0;
+    right: 0;
     color: #cccccc;
     background-color: #000;
     opacity: 0.7;
@@ -193,13 +199,6 @@ ul {
         @extend %column;
     }
 
-    &__column-1::after {
-        content: "→";
-        @extend %col-arrow;
-        top: -34px;
-        left: 209px;
-    }
-
     // .main__item
 
     &__item {
@@ -215,18 +214,51 @@ ul {
         height: 225px;
     }
 
+    // .main__img-2
+
+    &__img-2 {
+        background-image: url("../img/auto.jpg");
+        @extend %imgs;
+        height: 225px;
+    }
+
+        // .main__img-3
+
+        &__img-3 {
+            background-image: url("../img/cameraios.jpg");
+            @extend %imgs;
+            height: 225px;
+        }
+
     // .main__img-1::before
 
     &__img-1::before {
         content: "Design";
-        top: 195px;
         @extend %img-category;
     }
+
+        // .main__img-2::before
+
+        &__img-2::before {
+            content: "Design";
+            @extend %img-category;
+        }
+
+        // .main__img-3::befor
+        &__img-3::before {
+            content: "Design";
+            @extend %img-category;
+        }
 
     // .main__content
 
     &__content {
         background-color: #fff;
+        position: relative;
+    }
+
+    &__content::before {
+        @extend %col-arrow;
     }
 
     // .main__column-2
@@ -265,10 +297,6 @@ ul {
     }
 }
 
-.test {
-    font-size: 12px;
-    border: 1px solid #333;
-    
-}
+
 
 //=============================================== /MAIN

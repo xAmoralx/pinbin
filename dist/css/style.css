@@ -18,12 +18,16 @@
   margin-top: 15px;
   -webkit-box-shadow: 0 4px 15px -5px #555;
           box-shadow: 0 4px 15px -5px #555;
+  position: relative;
 }
 
-.main__img-1 {
+.main__img-1,
+.main__img-2,
+.main__img-3 {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  position: relative;
 }
 
 .content__date {
@@ -46,8 +50,11 @@ h2,
   padding-right: 24px;
 }
 
-.main__img-1::before {
-  position: relative;
+.main__img-1::before,
+.main__img-2::before,
+.main__img-3::before {
+  position: absolute;
+  bottom: 0;
   color: #cccccc;
   background-color: #000;
   opacity: 0.7;
@@ -58,8 +65,11 @@ h2,
   padding: 8px 30px 8px 20px;
 }
 
-.main__column-1::after {
-  position: relative;
+.main__content::before {
+  content: "→";
+  position: absolute;
+  bottom: 0;
+  right: 0;
   color: #cccccc;
   background-color: #000;
   opacity: 0.7;
@@ -164,12 +174,6 @@ ul {
   margin-left: auto;
 }
 
-.main__column-1::after {
-  content: "→";
-  top: -34px;
-  left: 209px;
-}
-
 .main__item {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -185,15 +189,35 @@ ul {
   height: 225px;
 }
 
+.main__img-2 {
+  background-image: url("../img/auto.jpg");
+  height: 225px;
+}
+
+.main__img-3 {
+  background-image: url("../img/cameraios.jpg");
+  height: 225px;
+}
+
 .main__img-1::before {
   content: "Design";
-  top: 195px;
+}
+
+.main__img-2::before {
+  content: "Design";
+}
+
+.main__img-3::before {
+  content: "Design";
 }
 
 .main__content {
   background-color: #fff;
+  position: relative;
 }
 @supports (-webkit-appearance:none){
 body{background-image:url("../img/wood.webp")}
 .main__img-1{background-image:url("../img/lego-750x562.webp")}
+.main__img-2{background-image:url("../img/auto.webp")}
+.main__img-3{background-image:url("../img/cameraios.webp")}
 }
