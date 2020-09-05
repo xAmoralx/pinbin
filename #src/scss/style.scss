@@ -1,0 +1,198 @@
+@mixin font($font_name, $file_name, $weight, $style) {
+    @font-face {
+        font-family: $font_name;
+        font-display: swap;
+        src: url("../fonts/#{$file_name}.woff") format("woff"), url("../fonts/#{$file_name}.woff2") format("woff2");
+        font-weight: #{$weight};
+        font-style: #{$style};
+    }
+}
+
+//<подключаемые шрифты>
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,regular,500,700&display=swap&subset=cyrillic-ext");
+@import "fonts";
+//</подключаемые шрифты>
+
+//<шрифт по умолчанию>
+$fontFamily: "Roboto";
+//</шрифт по умолчанию>
+
+//шаблоны
+%column {
+	display: flex;
+    flex-direction: column;
+    width: 22%;
+    margin-right: 10px;
+    margin-top: 15px; 
+    box-shadow: 0 4px 15px -5px #555;   
+}
+
+%imgs {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+%cont-date {
+    color: #8e8e8e;
+    font-size: 11px;
+    border-bottom: 1px dotted #cccccc;
+    width: 115px;
+}
+
+%cont-txt {
+    font-size: 13px;
+    color: #454545;
+    line-height: 24px;
+}
+
+%cont-pad {
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+%img-category {
+    position: relative;
+    color: #cccccc;
+    background-color: #000;
+    opacity: 0.7;
+    height: 30px;
+    width: auto;
+    line-height: 30px;
+    width: 70px;
+    padding: 8px 30px 8px 20px;
+
+}
+//шаблоны
+
+//переменные
+//$pl: 
+//переменные
+
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+h2 {
+    color: #444444;
+    font-size: 24px;
+    line-height: 32px;
+    @extend %cont-pad;
+}
+
+body {
+    background-image: url("../img/wood.png");
+    width: 100%;
+    background-size: auto;
+    background-position: left top;
+    background-repeat: repeat;
+    margin: 0;
+    font-size: 13px;
+    font-family: RobotoRegular, sans-serif;
+}
+
+.header__section {
+    width: 100%;
+    max-height: 50px;
+    background-color: #fff;
+    box-shadow: 0 4px 15px -5px #555;
+}
+
+.header__wrap {
+    display: flex;
+    justify-content: flex-start;
+    max-height: 50px;
+    box-shadow: 0 4px 15px -5px #555;
+}
+
+.header__nav {
+    display: flex;
+    margin: 0;
+    justify-content: center;
+}
+
+.logo__img {
+    max-height: 50px;
+    padding-left: 40px;
+}
+
+.logo__img:hover {
+    cursor: pointer;
+    opacity: 0.8;
+    transition: 0.7s;
+}
+
+ul {
+    padding: 0;
+}
+
+.header__nav li {
+    padding: 18px 12px;
+    color: #999;
+}
+
+.header__nav li:hover {
+    cursor: pointer;
+    color: #111;
+}
+
+.main__wrap {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    padding-top: 54px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.main__column-1 {
+    @extend %column;
+}
+
+.main__column-2 {
+    @extend %column;
+}
+
+.main__column-3 {
+    @extend %column;
+}
+
+.main__column-4 {
+    @extend %column;
+}
+
+.main__item {
+    display: flex;
+    flex-direction: column;
+}
+
+.main__img-1 {
+    background-image: url("../img/lego-750x562.png");
+    @extend %imgs;
+    height: 225px;
+}
+
+.main__img-1::before {
+    content: "Design";
+    top: 195px;
+    @extend %img-category;
+}
+
+.main__content {
+    background-color: #fff;
+}
+
+.content__date {
+    @extend %cont-date;
+    @extend %cont-pad;
+}
+
+.content__text {
+    @extend %cont-txt;
+    @extend %cont-pad;
+}
